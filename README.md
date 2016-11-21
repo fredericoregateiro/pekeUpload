@@ -1,6 +1,7 @@
 ###### What is solriaUpload?
 is a jQuery plugin, based on pekeUpload, that allows you to easily add multiple or single file upload functionality to your website.
 This plugin uses html5 only.
+This plugin is still in active development
 
 Dependencies:
 
