@@ -3,7 +3,7 @@
  *  written by Frederico Regateiro
  *  http://regateiro.azurewebsites.net/
  *
- *  Copyright (c) 2015 Pedro Molina (http://regateiro.azurewebsites.net/)
+ *  Copyright (c) 2016 Frederico Regateiro (http://regateiro.azurewebsites.net/)
  *  Dual licensed under the MIT (MIT-LICENSE.txt)
  *  and GPL (GPL-LICENSE.txt) licenses.
  *
@@ -48,6 +48,10 @@
             container: null,
             uploadedfiles: 0,
             hasErrors: false,
+            stopEvent: function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+            },
             init: function () {
                 this.replacehtml();
                 this.uparea.on('click', function () {
@@ -85,7 +89,7 @@
                 this.obj.click();
             },
             handlebuttonevents: function () {
-                $(this.obj).on('change', this.obj.selector, function () {
+                $(this.obj.selector).on('change', function () {
                     solriaUpload.checkFile(solriaUpload.obj[0].files[0]);
                 });
                 $(document).on('click', '.su-del', function () {
@@ -95,20 +99,20 @@
             },
             handledragevents: function () {
                 $(document).on('dragenter', function (e) {
-                    this.stopDefaultEvent(e);
+                    solriaUpload.stopEvent(e);
                 });
                 $(document).on('dragover', function (e) {
-                    this.stopDefaultEvent(e);
+                    solriaUpload.stopEvent(e);
                 });
                 $(document).on('drop', function (e) {
-                    this.stopDefaultEvent(e);
+                    solriaUpload.stopEvent(e);
                 });
                 this.uparea.on('dragenter', function (e) {
-                    this.stopDefaultEvent(e);
+                    solriaUpload.stopEvent(e);
                     $(this).css('border', '2px solid #0B85A1');
                 });
                 this.uparea.on('dragover', function (e) {
-                    this.stopDefaultEvent(e);
+                    solriaUpload.stopEvent(e);
                 });
                 this.uparea.on('drop', function (e) {
                     $(this).css('border', '2px dotted #0B85A1');
@@ -118,10 +122,6 @@
                         solriaUpload.checkFile(files[i]);
                     }
                 });
-            },
-            stopDefaultEvent: function (e) {
-                e.stopPropagation();
-                e.preventDefault();
             },
             checkFile: function (file) {
                 error = this.validateFile(file);
