@@ -1,43 +1,30 @@
-[![NPM](https://nodei.co/npm/pekeupload.png)](https://nodei.co/npm/pekeupload/)
-pekeUpload
-==========
-###### What is pekeUpload?
-is a jQuery plugin that allows you to easily add multiple or single file upload functionality to your website. This plugin uses html5 only.
+###### What is solriaUpload?
+is a jQuery plugin, based on pekeUpload, that allows you to easily add multiple or single file upload functionality to your website.
+This plugin uses html5 only.
+
+Dependencies:
+
+1. jQuery 1.4.x or greater
+2. Twitter Bootstrap v3.0.x or greater
 
 Some Features include:
 
-1.  Theming (Twitter Bootstrap ready)
+1.  Lightweight
 2.  Set File size limit
 3.  Set File extensions restrictions
-4.  Set custom error messages
+4.  Custom error messages and custom css classes
 5.  Real-Time Progress Indicators
 6.  Drag & Drop File Upload support
 7.  Preview your media file (images,audios and videos)
 6.  And others more...
 
-Do you like this plugin?
+###### Why 
 
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8MW4KWSLB75YA)
+The original pekeUpload was great, but i needed some changes and the support was slow. So i forked a new project to do my custom work on it.
 
-###### New Version 2.0!! 
-
-This version has been re-coded from scratch, and include new functionalities and has been updated to support jQuery 2.x.x and Bootstrap 3.x.x, there has been a lot of changes from v 1.0.6. Here's some of the new features:
-
-1. New dragMode feature, you can now support drag & drop uploads
-2. Updated support for the latest libraries of jQuery and Twitter Bootstrap
-3. You can return data from the server-side script
-4. Preview Option, you can now on the queue view a preview of the file that you are uploading
-5. Set limit of the file uploads
-
-###### Requirements
-1.  jQuery 1.4.x or greater
-2.  Web browser capable to render HTML5
-3.  If you're using Bootstrap, you will need bootstrap.css from v3.0.x or greater
-4.  A server processing script for the files
-
-###### Implementation
-1.  Download pekeUpload zip.
-2.  Unzip pekeUpload zip.
+###### Use
+1.  Download solriaUpload zip.
+2.  Unzip solriaUpload zip.
 3.  Then add a reference to the jQuery library.
     ```
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
@@ -45,7 +32,7 @@ This version has been re-coded from scratch, and include new functionalities and
     
 4.  Below the reference to jQuery, add a reference to the pekeUpload script.
     ```
-    <script type="text/javascript" src="js/pekeUpload.js"></script>
+    <script type="text/javascript" src="js/solriaUpload.min.js"></script>
     ```
     
 5.  On the page, add a file input.
@@ -53,9 +40,9 @@ This version has been re-coded from scratch, and include new functionalities and
     <input id="file" type="file" name="file" />
     ```
     
-6.  Initialize pekeUpload on the file input.
+6.  Initialize solriaUpload on the file input.
     ```
-    $("#file").pekeUpload();
+    $("#file").solriaUpload();
     ```
  
 ###### Plugin Options
@@ -64,7 +51,6 @@ This version has been re-coded from scratch, and include new functionalities and
 | ------ | ------- | ------- | ---------- |
 | dragMode| false  | true/false | Set the mode of uploading the files, if you prefer the user drags & drops, or to click on a button and browse for the file |
 | dragText| "Drag and Drop your files here" | string | Set the text for the drag & drop area |
-| bootstrap | false | true/false | Set the theme for the uploader, false if you want to use your custom css, or true if you prefer the Twitter bootstrap-ready functionality, you can check css/custom.css to customize your uploader |
 | btnText| "Browse files..." | string | Set the text of the upload button |
 | allowedExtensions | "" | "ext1" | Sets the file extensions allowed to upload |
 | invalidExtError | "Invalid File Type" | string | Sets the error message when the file has an unsupported extension |
@@ -81,6 +67,10 @@ This version has been re-coded from scratch, and include new functionalities and
 | limit | 0 | integer | Sets the limits of files that an user can uploads, 0 is unlimited |
 | limitError | "You have reached the limit of files that you can upload" | string | Sets the error message when a user tried to upload more files than the limit |
 | delfiletext | "Remove from queue" | string | Sets the default message of the button which allows to delete a file from a queue of uploads |
+| dragContainerCss | "well well-lg" | string | Sets the css for the drag container div |
+| uploadButtonCss | "btn btn-primary btn-upload" | string | Sets the css for the drag container div |
+| uploadButtonIconCss | "glyphicon glyphicon-upload" | string | Sets the css for the upload button |
+| previewIconFileCss | "glyphicon glyphicon-file" | string | Sets the css for the preview icon file |
 |  onFileError | function(file,error){} | function(file,error){} | Event triggered when some error ocurs, returns error (string), file (object). file returns file.name and file.size |
 |  onFileSuccess | function(file,data){} | function(file,data){} | Event triggered when the file has been uploaded succesfully, returns data (string), file (object). file returns file.name and file.size |
 
