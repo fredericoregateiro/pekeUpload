@@ -244,7 +244,7 @@
                     data: formData,
                     dataType: 'json',
                     success: function (data) {
-                        if (data === 1 || data.success === 1) {
+                        if (data === true || data.success === true) {
                             solriaUpload.files[pos] = null;
                             $('div.row[rel="' + pos + '"]').find('.su-uppbr').css('width', '100%');
                             options.onFileSuccess(file, data);
@@ -254,7 +254,7 @@
                             if (error in data) {
                                 err = null;
                             } else {
-                                err = options.errorOnResponse;
+                                err = data.error || options.errorOnResponse;
                             }
                             if (options.showErrorAlerts) {
                                 solriaUpload.addWarning(err, $('div.row[rel="' + pos + '"]'));
