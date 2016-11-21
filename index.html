@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>PekeUpload by pekebyte</title>
+    <title>solriaUpload by SolRIA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,19 +11,19 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">PekeUpload</h1>
+      <h1 class="project-name">solriaUpload</h1>
       <h2 class="project-tagline"> jQuery html5 file uploader plugin</h2>
-      <a href="https://github.com/pekebyte/pekeUpload" class="btn">View on GitHub</a>
-      <a href="https://github.com/pekebyte/pekeUpload/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/pekebyte/pekeUpload/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="https://github.com/fredericoregateiro/solriaUpload" class="btn">View on GitHub</a>
+      <a href="https://github.com/fredericoregateiro/solriaUpload/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/fredericoregateiro/solriaUpload/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
       <h1>
-<a id="pekeupload" class="anchor" href="#pekeupload" aria-hidden="true"><span class="octicon octicon-link"></span></a>pekeUpload</h1>
+<a id="pekeupload" class="anchor" href="#pekeupload" aria-hidden="true"><span class="octicon octicon-link"></span></a>solriaUpload</h1>
 
 <h2>
-<a id="what-is-pekeupload" class="anchor" href="#what-is-pekeupload" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is pekeUpload?</h2>
+<a id="what-is-pekeupload" class="anchor" href="#what-is-pekeupload" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is solriaUpload?</h2>
 
 <p>is a jQuery plugin that allows you to easily add multiple or single file upload functionality to your website. This plugin uses html5 only.</p>
 
@@ -39,13 +39,6 @@
 <li> Preview your media file (images,audios and videos)</li>
 <li> And others more...</li>
 </ol>
-
-<p>Do you like this plugin?</p>
-
-<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8MW4KWSLB75YA"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate"></a></p>
-
-<h2>
-<a id="new-version-20" class="anchor" href="#new-version-20" aria-hidden="true"><span class="octicon octicon-link"></span></a>New Version 2.0!!</h2>
 
 <p>This version has been re-coded from scratch, and include new functionalities and has been updated to support jQuery 2.x.x and Bootstrap 3.x.x, there has been a lot of changes from v 1.0.6. Here's some of the new features:</p>
 
@@ -71,9 +64,10 @@
 <a id="implementation" class="anchor" href="#implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementation</h2>
 
 <ol>
-<li> Download pekeUpload zip</li>
-<li> Unzip pekeUpload zip</li>
-<li>Then add a reference to the jQuery library.<br>
+<li> Download and unzip solriaUpload zip</li>
+<li>Add a reference to the jQuery library.<br>
+</li>
+<li>Add a reference to the Bootstrap library.<br>
 </li>
 </ol>
 
@@ -81,11 +75,11 @@
 </code></pre>
 
 <ol>
-<li> Below the reference to jQuery, add a reference to the pekeUpload script<br>
+<li> Below the reference to jQuery, add a reference to the solriaUpload script<br>
 </li>
 </ol>
 
-<pre><code> &lt;script type="text/javascript" src="js/pekeUpload.js"&gt;&lt;/script&gt;
+<pre><code> &lt;script type="text/javascript" src="js/solriaUpload.js"&gt;&lt;/script&gt;
 </code></pre>
 
 <ol>
@@ -97,11 +91,11 @@
 </code></pre>
 
 <ol>
-<li> Initialize pekeUpload on the file input<br>
+<li> Initialize solriaUpload on the file input<br>
 </li>
 </ol>
 
-<pre><code>  $("#file").pekeUpload();
+<pre><code>  $("#file").solriaUpload();
 </code></pre>
 
 <h2>
@@ -128,12 +122,6 @@
 <td>"Drag and Drop your files here"</td>
 <td>string</td>
 <td>Set the text for the drag &amp; drop area</td>
-</tr>
-<tr>
-<td>bootstrap</td>
-<td>false</td>
-<td>true/false</td>
-<td>Set the theme for the uploader, false if you want to use your custom css, or true if you prefer the Twitter bootstrap-ready functionality, you can check css/custom.css to customize your uploader</td>
 </tr>
 <tr>
 <td>btnText</td>
@@ -225,6 +213,30 @@
 <td>string</td>
 <td>Sets the error message when a user tried to upload more files than the limit</td>
 </tr>
+  <tr>
+    <td>dragContainerCss</td>
+    <td>"well well-lg"</td>
+    <td>string</td>
+    <td>Sets the css for the drag container div</td>
+  </tr>
+  <tr>
+    <td>uploadButtonCss</td>
+    <td>"btn btn-primary btn-upload"</td>
+    <td>string</td>
+    <td>Sets the css for the drag container div</td>
+  </tr>
+  <tr>
+    <td>uploadButtonIconCss</td>
+    <td>"glyphicon glyphicon-upload"</td>
+    <td>string</td>
+    <td>Sets the css for the upload button</td>
+  </tr>
+  <tr>
+    <td>previewIconFileCss</td>
+    <td>"glyphicon glyphicon-file"</td>
+    <td>string</td>
+    <td>Sets the css for the preview icon file</td>
+  </tr>
 <tr>
 <td>onFileError</td>
 <td>function(file,error){}</td>
