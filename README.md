@@ -10,7 +10,7 @@ Dependencies:
 
 Some Features include:
 
-1.  Lightweight
+1.  Lightweight (6.29 KB min)
 2.  Set File size limit
 3.  Set File extensions restrictions
 4.  Custom error messages and custom css classes
@@ -79,7 +79,7 @@ The original pekeUpload was great, but i needed some changes and the support was
 
 The file is received by the server side script with the name of the input, for example: if you set that the name of the input is image, then you must expect on the server-side script an input called image.
 
-The server side script must return '1' or '{success:1}', if you wish to attach more data to the response just print a json string, if you want to set your custom error message, return the error property on the json string. See upload.php
+The server side script must return 'true' or '{success:true}', if you want to set your custom server error message, return '{success:false, error: 'my custom error'}'
 
 	
 
